@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.android.mvi.test"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def app = rootProject.ext.app
+
+    implementation project(':presentation')
+    implementation project(':data')
+
+    implementation app.androidAnnotations
+    implementation app.androidSupportV4
+    implementation app.androidSupportV13
+    implementation app.appCompatV7
+    implementation app.supportRecyclerView
+    implementation app.supportDesign
+    implementation app.timber
+    implementation app.rxAndroid
+    implementation app.rxBinding
+    implementation app.dagger
+    implementation app.daggerSupport
+
+    kapt app.archCompiler
+
+    kapt app.daggerCompiler
+    kapt app.daggerProcessor
+}
+

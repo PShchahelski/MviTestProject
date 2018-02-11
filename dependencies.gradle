@@ -1,0 +1,77 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+    androidBuildToolsVersion = "27.0.2"
+    androidMinSdkVersion = 15
+    androidTargetSdkVersion = 27
+    androidCompileSdkVersion = 27
+
+    //Libraries
+    kotlinVersion = '1.1.51'
+    butterKnifeVersion = '7.0.1'
+    recyclerViewVersion = '21.0.3'
+    rxJavaVersion = '2.0.2'
+    rxKotlinVersion = '2.1.0'
+    rxAndroidVersion = '2.0.1'
+    rxBindingVersion = '2.0.0'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    androidAnnotationsVersion = '21.0.3'
+    roomVersion = '1.0.0'
+    supportLibraryVersion = '26.1.0'
+    timberVersion = '4.5.1'
+    daggerVersion = '2.11'
+
+    app = [
+            daggerCompiler     : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger             : "com.google.dagger:dagger:${daggerVersion}",
+            rxKotlin           : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            rxBinding          : "com.jakewharton.rxbinding2:rxbinding-support-v4:${rxBindingVersion}",
+            kotlin             : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            javaxAnnotation    : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject        : "javax.inject:javax.inject:${javaxInjectVersion}",
+            androidAnnotations : "com.android.support:support-annotations:${supportLibraryVersion}",
+            androidSupportV4   : "com.android.support:support-v4:${supportLibraryVersion}",
+            androidSupportV13  : "com.android.support:support-v13:${supportLibraryVersion}",
+            appCompatV7        : "com.android.support:appcompat-v7:${supportLibraryVersion}",
+            supportRecyclerView: "com.android.support:recyclerview-v7:${supportLibraryVersion}",
+            supportDesign      : "com.android.support:design:${supportLibraryVersion}",
+            timber             : "com.jakewharton.timber:timber:${timberVersion}",
+            daggerSupport      : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerProcessor    : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            archRuntime        : "android.arch.lifecycle:runtime:${roomVersion}",
+            archExtensions     : "android.arch.lifecycle:extensions:${roomVersion}",
+            archCompiler       : "android.arch.lifecycle:compiler:${roomVersion}"
+    ]
+
+    domain = [
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxKotlin       : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}"
+    ]
+
+    data = [
+            rxKotlin       : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}"
+    ]
+
+    presentation = [
+            rxKotlin          : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            javaxAnnotation   : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
+            androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
+            archRuntime       : "android.arch.lifecycle:runtime:${roomVersion}",
+            archExtensions    : "android.arch.lifecycle:extensions:${roomVersion}",
+            archCompiler      : "android.arch.lifecycle:compiler:${roomVersion}",
+    ]
+}

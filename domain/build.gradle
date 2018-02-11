@@ -1,0 +1,20 @@
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+configurations.all {
+    resolutionStrategy {
+        force "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    }
+}
+
+dependencies {
+    def domain = rootProject.ext.domain
+
+    implementation domain.javaxAnnotation
+    implementation domain.javaxInject
+    implementation domain.rxKotlin
+    implementation domain.kotlin
+
+}

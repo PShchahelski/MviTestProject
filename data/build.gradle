@@ -1,0 +1,15 @@
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    def data = rootProject.ext.data
+
+    compile project(':domain')
+
+    implementation data.kotlin
+    implementation data.javaxAnnotation
+    implementation data.javaxInject
+    implementation data.rxKotlin
+}
