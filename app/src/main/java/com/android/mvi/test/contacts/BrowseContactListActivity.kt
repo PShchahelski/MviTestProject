@@ -16,7 +16,6 @@ import com.jakewharton.rxbinding2.support.v4.widget.RxSwipeRefreshLayout
 import dagger.android.AndroidInjection
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.subjects.BehaviorSubject.create
 import kotlinx.android.synthetic.main.a_main.list
 import kotlinx.android.synthetic.main.a_main.progress
 import kotlinx.android.synthetic.main.a_main.refresh_layout
@@ -26,8 +25,6 @@ class BrowseContactListActivity : AppCompatActivity(), MviBaseView<BrowseIntent,
 
     @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
     @Inject lateinit var browseAdapter: BrowseContactsListAdapter
-
-    private val refreshIntentPublisher = create<BrowseIntent.RefreshIntent>()
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -103,6 +100,5 @@ class BrowseContactListActivity : AppCompatActivity(), MviBaseView<BrowseIntent,
     private fun refreshIntent(): Observable<BrowseIntent.RefreshIntent> {
         return RxSwipeRefreshLayout.refreshes(refresh_layout)
                 .map { BrowseIntent.RefreshIntent }
-                .mergeWith(refreshIntentPublisher)
     }
 }

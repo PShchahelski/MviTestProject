@@ -1,15 +1,20 @@
 package com.android.mvi.test.data
 
 import com.android.mvi.test.domain.model.Contact
-import java.util.UUID.randomUUID
+import java.util.Random
 import java.util.concurrent.ThreadLocalRandom
 
 class ContactDataFactory {
 
     companion object Factory {
 
+        private val firstNames = arrayOf("Jayden", "Kuzman", "Alfher", "Kwesi", "Anaitis", "Leontius", "Iyov", "Rosa")
+        private val secondName = arrayOf("Yevdokiya", "Lev", "Maksim", "Oksana", "Nata", "Anya", "Pasha", "Anastasia")
+
         private fun randomString(): String {
-            return randomUUID().toString()
+            val index = Random().nextInt(secondName.size)
+
+            return firstNames[index] + " " + secondName[index]
         }
 
         private fun randomInt(): Int {
