@@ -13,7 +13,4 @@ https://github.com/bufferapp/android-clean-architecture-mvi-boilerplate
 
 https://hackernoon.com/model-view-intent-mvi-part-1-state-renderer-187e270db15c
 
-
-https://proandroiddev.com/unidirectional-data-flow-on-android-the-blog-post-part-1-cadcf88c72f5
-
 https://proandroiddev.com/unidirectional-data-flow-on-android-the-blog-post-part-1-cadcf88c72f5
